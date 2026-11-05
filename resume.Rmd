@@ -48,6 +48,6 @@ title: "Resume"
 
 ## Skills
 
-* **Statistical computing:** R, SAS
+* **Software:** R, SAS
 * **Reproducible research:** git and GitHub
 * **Methods:** regression modeling, categorical data analysis, factor analysis, ecological and geospatial analysis
