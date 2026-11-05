@@ -11,6 +11,7 @@ library(tidyverse)
 library(p8105.datasets)
 library(plotly)
 library(flexdashboard)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```
 
 ```{r load-clean}
