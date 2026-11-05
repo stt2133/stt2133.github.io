@@ -103,8 +103,19 @@ latest_inspection |>
   )
 ```
 
-### Chart C
+### Average monthly inspection score by borough
 
-```{r}
-
+```{r line-boro-month}
+inspections |> 
+  mutate(month = floor_date(inspection_date, unit = "month")) |> 
+  group_by(boro, month) |> 
+  summarize(mean_score = mean(score)) |> 
+  plot_ly(
+    x = ~month, y = ~mean_score, color = ~boro, 
+    type = "scatter", mode = "lines", colors = "viridis"
+  ) |> 
+  layout(
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Mean inspection score")
+  )
 ```
