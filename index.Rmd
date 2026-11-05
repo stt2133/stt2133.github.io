@@ -12,6 +12,9 @@ My research looks at how social determinants of health and area-level exposures 
 
 ### Explore this site
 
+* **[Resume](resume.html)**: my academic, research, and teaching experience
+* **[Dashboard](dashboard.html)**: an interactive look at NYC restaurant inspection results, built with `plotly` and `flexdashboard`
+
 ### Get in touch
 
 The icons in the top right link to my email, GitHub, and LinkedIn.
