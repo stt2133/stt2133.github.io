@@ -5,8 +5,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Resume"
-      href: resume.html
+    - text: "Dashboard"
+      href: dashboard.html
   right:
     - icon: fa-envelope fa-lg
       href: mailto:stt2133@cumc.columbia.edu

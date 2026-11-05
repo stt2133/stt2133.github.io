@@ -1,0 +1,71 @@
+---
+title: "NYC Restaurant Inspections, 2017–2019"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+```
+
+```{r load-clean}
+data("rest_inspec")
+
+# one row per inspection; inspections from 2017-09/2019
+# drop rows with a missing borough or invalid score
+inspections =
+  rest_inspec |>
+  mutate(inspection_date = as.Date(inspection_date)) |>
+  filter(
+    boro != "0",
+    !is.na(score),
+    score >= 0,
+    inspection_date >= as.Date("2017-01-01"),
+    inspection_date < as.Date("2019-10-01")
+  ) |>
+  distinct(camis, inspection_date, .keep_all = TRUE) |>
+  mutate(
+    cuisine_description =
+      str_replace(cuisine_description, "^Latin.*", "Latin American")
+  ) |>
+  select(
+    camis, dba, boro, cuisine_description, inspection_date,
+    score, grade, latitude, longitude
+  )
+
+# Most recent inspection for each restaurant
+latest_inspection = 
+  inspections |> 
+  group_by(camis) |> 
+  filter(min_rank(desc(inspection_date)) == 1) |> 
+  ungroup()
+```
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
