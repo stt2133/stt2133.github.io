@@ -83,10 +83,23 @@ latest_inspection |>
 Column {data-width=400}
 -----------------------------------------------------------------------
 
-### Chart B
+### Citywide distribution of most recent inspection scores for the 10 most common cuisines
 
-```{r}
+```{r box-cuisine-scores}
+top_cuisines = 
+  latest_inspection |> 
+  count(cuisine_description) |> 
+  filter(min_rank(desc(n)) <= 10) |> 
+  pull(cuisine_description)
 
+latest_inspection |> 
+  filter(cuisine_description %in% top_cuisines) |> 
+  mutate(cuisine_description = fct_reorder(cuisine_description, score)) |> 
+  plot_ly(y = ~score, color = ~cuisine_description, type = "box", colors = "viridis") |> 
+  layout(
+    xaxis = list(title = ""),
+    yaxis = list(title = "Inspection score")
+  )
 ```
 
 ### Chart C
