@@ -16,7 +16,7 @@ library(flexdashboard)
 ```{r load-clean}
 data("rest_inspec")
 
-# one row per inspection; inspections from 2017-09/2019
+# one row per inspection; inspections from 01/2017-09/2019
 # drop rows with a missing borough or invalid score
 inspections =
   rest_inspec |>
@@ -38,7 +38,7 @@ inspections =
     score, grade, latitude, longitude
   )
 
-# Most recent inspection for each restaurant
+# most recent inspection for each restaurant
 latest_inspection = 
   inspections |> 
   group_by(camis) |> 
@@ -49,9 +49,34 @@ latest_inspection =
 Column {data-width=600}
 -----------------------------------------------------------------------
 
-### Chart A
+### Most recent inspection score for a random sample of 2,500 Manhattan restaurants
 
-```{r}
+```{r scatter-manhattan-map}
+set.seed(8105)
+
+latest_inspection |> 
+  filter(
+    boro == "Manhattan", 
+    latitude != 0, 
+    !is.na(latitude),
+    score <= 40
+  ) |> 
+  sample_n(2500) |> 
+  mutate(
+    text_label = 
+      str_c(
+        dba, "\nCuisine: ", cuisine_description, 
+        "\nScore: ", score, "\nInspected: ", inspection_date
+      )
+  ) |> 
+  plot_ly(
+    x = ~longitude, y = ~latitude, type = "scatter", mode = "markers",
+    color = ~score, text = ~text_label, alpha = 0.5
+  ) |> 
+  layout(
+    xaxis = list(title = "Longitude"),
+    yaxis = list(title = "Latitude")
+  )
 
 ```
 
