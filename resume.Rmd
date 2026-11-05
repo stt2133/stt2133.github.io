@@ -1,0 +1,53 @@
+---
+title: "Resume"
+---
+
+## Education
+
+**Columbia University Mailman School of Public Health**, New York, NY\
+*Master of Public Health, Sociomedical Sciences*, expected May 2027\
+*Certificate in Applied Biostatistics and Data Science*
+
+* Selected coursework: Data Science I (P8105), Applied Regression I & II, Categorical Data Analysis, Statistical Computing with SAS, Applied Quantitative Research Methods
+
+**Amherst College**, Amherst, MA\
+*Bachelor of Arts*, 2018
+
+## Research Experience
+
+**Llanos Lab, Department of Epidemiology, Columbia University**
+
+* Research on the social, structural, and biologic drivers of cancer inequities
+* County-level ecological study of immigrant concentration and breast cancer treatment timeliness
+* Factor-analytic study of breast cancer survival disparities (MPH thesis)
+
+**CEEESP Summer Research Fellowship (NIH-funded), CUNY School of Medicine**\
+*Fellow, mentored by Dr. Kelly Hirko*
+
+**Pediatric Surgery Research**
+
+## Publications
+
+* First-author peer-reviewed publication on social determinants of health
+
+## Teaching
+
+**Teaching Assistant, Research Methods & Applications: Quantitative Foundations**, Columbia Mailman, Fall 2026
+
+* Lead the quantitative lab sections and provide technical support during lecture
+
+**English Teaching Fellow**, France
+
+**Chemistry Lab Teaching Assistant**
+
+## Leadership & Service
+
+**Co-developer, Being Human in STEM (HSTEM)**, Amherst College
+
+* Built an inclusion initiative with Professor Sheila Jaswal that has since spread to campuses nationally
+
+## Skills
+
+* **Statistical computing:** R, SAS
+* **Reproducible research:** git and GitHub
+* **Methods:** regression modeling, categorical data analysis, factor analysis, ecological and geospatial analysis
